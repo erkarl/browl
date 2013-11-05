@@ -1,5 +1,5 @@
 {
-  "name": "ember-app-kit",
+  "name": "browl",
   "dependencies": {
     "handlebars": "1.0.0",
     "jquery": "~1.9.1",
