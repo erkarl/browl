@@ -1,12 +1,12 @@
 var Post = DS.Model.extend({
     title: DS.attr('string'),
-    content: DS.attr('string')
+    body: DS.attr('string')
 });
 
 Post.FIXTURES = [
-  { id: 1, title: 'Sample Title', content: 'Sample Content' },
-  { id: 2, title: 'Title Sample', content: 'Content Sample' },
-  { id: 3, title: 'Example Title', content: 'Title Example' }
+  { id: 1, title: 'Sample Title', body: 'Sample Content' },
+  { id: 2, title: 'Title Sample', body: 'Content Sample' },
+  { id: 3, title: 'Example Title', body: 'Title Example' }
 ];
 
 export default Post;

@@ -1,2 +1,6 @@
-Index template
-{{#link-to 'post' 1}}Post test{{/link-to}}
+<h2>Posts</h2>
+{{#each model}}
+  <li class="list-group-item">
+    {{#link-to 'post' id}}{{title}}{{/link-to}}
+  </li>
+{{/each}}
