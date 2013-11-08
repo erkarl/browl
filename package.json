@@ -1,7 +1,7 @@
 {
-  "name": "app-kit",
-  "namespace": "appkit",
-  "version": "0.0.0",
+  "name": "browl",
+  "namespace": "browl",
+  "version": "0.0.1",
   "private": true,
   "directories": {
     "doc": "doc",
@@ -15,10 +15,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/stefanpenner/ember-app-kit.git"
+    "url": "git@github.com:erkarl/browl.git"
   },
-  "author": "",
-  "license": "BSD",
+  "author": "Karl Ranna",
   "devDependencies": {
     "express": "~3.4.2",
     "lockfile": "~>0.3.0",
