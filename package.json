@@ -1,6 +1,6 @@
 {
   "name": "browl",
-  "namespace": "browl",
+  "namespace": "appkit",
   "version": "0.0.1",
   "private": true,
   "directories": {
