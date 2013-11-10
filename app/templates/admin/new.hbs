@@ -1,2 +1,17 @@
 <h2>New post</h2>
-New Template
+<form id="newPostForm">
+<div class="col-md-3">
+<label>
+    Title:
+</label>
+{{input class="form-control" placeholder="Title" value=title}}
+</div>
+<div class="col-md-9">
+<label>
+    Content:
+</label>
+{{textarea class="form-control" placeholder="Content" value=body}}
+</div>
+<hr>
+<button class="btn btn-default" {{action "addNew"}}>Save</button>
+</form>
