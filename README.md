@@ -1,2 +1,2 @@
-# Browl
-Source for [http://browl.karlranna.com](http://browl.karlranna.com)
+# Browl [![Build Status](https://travis-ci.org/erkarl/browl.png?branch=master)](https://travis-ci.org/erkarl/browl)  
+
