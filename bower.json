@@ -7,6 +7,7 @@
     "ember": "~>1.2.0-beta.1",
     "ember-data-shim": "1.0.0-beta.3",
     "bootstrap": "*",
+    "ember-data-localstorage": "https://raw.github.com/rpflorence/ember-localstorage-adapter/master/localstorage_adapter.js",
     "ember-resolver": "git://github.com/stefanpenner/ember-jj-abrams-resolver.git#master"
   },
   "resolutions": {
