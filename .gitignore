@@ -8,6 +8,7 @@
 /node_modules
 /vendor/*
 !/vendor/almond.js
+!/vendor/markdown.js
 
 # misc
 /.sass-cache
