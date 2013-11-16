@@ -6,6 +6,7 @@ Router.map(function() {
 
   this.resource('admin', function(){
       this.route('new');
+      this.route('edit', { path: "/edit/:id" });
   });
 
 });

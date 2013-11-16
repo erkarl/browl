@@ -3,6 +3,7 @@
   <li class="list-group-item">
     {{#link-to 'post' id}}{{title}}{{/link-to}}
     <div class="pull-right">
+      {{#link-to 'admin.edit' this}}<button class="btn btn-default" {{action "editEntry" this}}>Edit</button>{{/link-to}}
       <button class="btn btn-default" {{action "deleteEntry" this}}>Delete</button>
     </div>
     <br>
