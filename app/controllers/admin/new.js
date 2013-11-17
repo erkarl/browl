@@ -17,9 +17,18 @@ var NewAdminController = Ember.Controller.extend({
         addNew: function(){
           var hash = this.getProperties('title', 'body');
           var that = this;
-          this.store.createRecord('post', hash).save().then(function(){
-            that.reset();
-            that.transitionToRoute('index');
+          this.get('store').find('user', 1).then(function(userModel){
+            var addnew = that;
+            var hash = {
+              user: userModel,
+              title: that.get('title'),
+              body: that.get('body')
+            };
+            console.log('hash: ' + JSON.stringify(hash));
+            addnew.store.createRecord('post', hash).save().then(function(){
+              addnew.reset();
+              addnew.transitionToRoute('index');
+            });
           });
         }
     }

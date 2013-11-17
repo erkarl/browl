@@ -38,7 +38,7 @@ DS.DjangoRESTSerializer = DS.RESTSerializer.extend({
     extractSingle: function(store, type, payload) {
         // using normalize from RESTSerializer applies transforms and allows
         // us to define keyForAttribute and keyForRelationship to handle
-        // camelization correctly. 
+        // camelization correctly.
         this.normalize(type, payload);
         this.extractDjangoPayload(store, type, payload);
         return payload;
@@ -123,6 +123,7 @@ DS.DjangoRESTSerializer = DS.RESTSerializer.extend({
       @method serializeBelongsTo
     */
     serializeBelongsTo: function(record, json, relationship) {
+        console.log('DRS serializeBelongsTo()');
         var key = relationship.key;
         var belongsTo = record.get(key);
         var json_key = this.keyForRelationship ? this.keyForRelationship(key, "belongsTo") : key;
@@ -133,7 +134,10 @@ DS.DjangoRESTSerializer = DS.RESTSerializer.extend({
           if (typeof(record.get(key)) === 'string') {
             json[json_key] = record.get(key);
           }else{
-            json[json_key] = record.get(key).get('id');
+            // json[json_key] = record.get(key).get('id');
+            // TODO: Support HyperlinkedRelatedFields
+            json[json_key] = record.get(key).get('data.url');
+            console.log('TODO: Support HyperlinkedRelatedFields');
           }
         }
 
@@ -148,6 +152,7 @@ DS.DjangoRESTSerializer = DS.RESTSerializer.extend({
       @method serializeHasMany
     */
     serializeHasMany: function(record, json, relationship) {
+        console.log('DRS serializeHasMany()');
         var key = relationship.key,
             json_key = this.keyForRelationship(key, "hasMany"),
             relationshipType = DS.RelationshipChange.determineRelationshipType(
@@ -185,24 +190,28 @@ DS.DjangoRESTAdapter = DS.RESTAdapter.extend({
       @returns String
     */
     pathForType: function(type) {
+        console.log('DRA pathForType()');
         var decamelized = Ember.String.decamelize(type);
         return Ember.String.pluralize(decamelized);
     },
 
 
     createRecord: function(store, type, record) {
+        console.log('DRA createRecord()');
         var url = this.buildURL(type.typeKey);
         var data = store.serializerFor(type.typeKey).serialize(record);
         return this.ajax(url, "POST", { data: data });
     },
 
     updateRecord: function(store, type, record) {
+        console.log('DRA updateRecord()');
         var data = store.serializerFor(type.typeKey).serialize(record);
         var id = get(record, 'id'); //todo find pk (not always id)
         return this.ajax(this.buildURL(type.typeKey, id), "PUT", { data: data });
     },
 
     findMany: function(store, type, ids, parent) {
+        console.log('DRA findMany()');
         var adapter, root, url, endpoint, attribute;
         adapter = this;
 
@@ -213,28 +222,42 @@ DS.DjangoRESTAdapter = DS.RESTAdapter.extend({
         } else {
             Ember.assert("You need to add belongsTo for type (" + type.typeKey + "). No Parent for this record was found");
         }
-
         return this.ajax(url, "GET");
     },
 
     ajax: function(url, type, hash) {
+        console.log('DRA ajax()');
         hash = hash || {};
         hash.cache = false;
 
+        console.log('DRA ajax(): hash: ' + JSON.stringify(hash));
         return this._super(url, type, hash);
     },
 
     buildURL: function(type, id) {
+        console.log('DRA: buildURL()');
         var url = this._super(type, id);
+
+        // Handle dealing with HyperLinkedRelatedField
+        try {
+            if (id.substring(0, 4) == 'http'){
+                console.log('DRA buildURL(): HyperLinkedRelatedField');
+                url = id;
+            }
+        } catch(err) {
+            // In case ID is undefined
+            console.log('hyperlinkedrelatedfield error: ' + err);
+        }
 
         if (url.charAt(url.length -1) !== '/') {
             url += '/';
         }
-
+        console.log('DRA: buildURL(): ' + url);
         return url;
     },
 
     buildFindManyUrlWithParent: function(type, parent, endpoint) {
+        console.log('DRA buildFindManyUrlWithParent()');
         var root, url, parentValue;
 
         parentValue = parent.get('id'); //todo find pk (not always id)
@@ -267,7 +290,7 @@ DS.DjangoRESTAdapter = DS.RESTAdapter.extend({
           aliases: [2,3],
           favorites: [4,5]
       }
-      
+
       type = App.Speaker;
       parent = user1;
       ids = [4,5]
@@ -281,6 +304,7 @@ DS.DjangoRESTAdapter = DS.RESTAdapter.extend({
       @returns String
     */
     getHasManyAttributeName: function(type, parent, ids) {
+      console.log('DRA getHasManyAttributeName()');
       var attributeName;
       parent.eachRelationship(function(name, relationship){
         var relationshipIds;
