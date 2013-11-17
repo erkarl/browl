@@ -9,6 +9,7 @@
 /vendor/*
 !/vendor/almond.js
 !/vendor/markdown.js
+!/vendor/ember-data-django-rest-adapter.js
 
 # misc
 /.sass-cache
