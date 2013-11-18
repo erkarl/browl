@@ -239,15 +239,10 @@ DS.DjangoRESTAdapter = DS.RESTAdapter.extend({
         var url = this._super(type, id);
 
         // Handle dealing with HyperLinkedRelatedField
-        try {
-            if (id.substring(0, 4) == 'http'){
-                console.log('DRA buildURL(): HyperLinkedRelatedField');
-                url = id;
-            }
-        } catch(err) {
-            // In case ID is undefined
-            console.log('hyperlinkedrelatedfield error: ' + err);
-        }
+        if(!(typeof id === 'undefined')){
+          console.log('DRA buildURL(): HyperLinkedRelatedField');
+          url = id;
+        };
 
         if (url.charAt(url.length -1) !== '/') {
             url += '/';
