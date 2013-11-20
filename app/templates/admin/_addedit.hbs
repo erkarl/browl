@@ -1,0 +1,27 @@
+<div class="col-md-6 editArea">
+  <form id="newPostForm">
+  <div class="row titleRow">
+    <label>
+        Title:
+    </label>
+    {{input class="form-control" placeholder="Title" value=title}}
+  </div><!-- end titleRow -->
+  <div class="row bodyRow">
+    <br>
+    <label>
+        Content:
+    </label>
+    {{textarea class="form-control" placeholder="Content" value=body}}
+  </div><!-- end bodyRow -->
+  <div class="row saveButtonRow">
+    <br>
+    <button class="btn btn-default" {{action "addNew"}}>Save</button>
+    </form><!-- end newPostForm -->
+  </div><!-- end saveButtonRow -->
+</div><!-- end editArea -->
+<div class="col-md-5 previewArea">
+  <h2>{{title}}</h2>
+  <div class="row previewBodyRow">
+    {{mark-down body}}
+  </div><!-- end previewBodyRow -->
+</div><!-- end previewArea -->
