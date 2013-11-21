@@ -3,9 +3,6 @@ var IndexController = Ember.ArrayController.extend({
         deleteEntry: function(post){
           post.deleteRecord();
           post.save();
-        },
-        editEntry: function(post){
-          console.log('editEntry action');
         }
     }
 });
