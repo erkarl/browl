@@ -7,7 +7,7 @@
 # dependencies
 /node_modules
 /vendor/*
-!/vendor/almond.js
+!/vendor/loader.js
 !/vendor/markdown.js
 !/vendor/ember-data-django-rest-adapter.js
 

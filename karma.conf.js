@@ -6,12 +6,12 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      'vendor/almond.js',
+      'vendor/loader.js',
       'vendor/ember-resolver/dist/ember-resolver.js',
       'vendor/jquery/jquery.js',
       'vendor/handlebars/handlebars.js',
       'vendor/ember/ember.js',
-      'vendor/ember-data-shim/ember-data.js',
+      'vendor/ember-data/ember-data.js',
       'vendor/markdown.js',
       'tmp/result/assets/templates.js',
       'tmp/result/assets/app.js',
@@ -32,7 +32,7 @@ module.exports = function(config) {
     ],
 
     preprocessors: {
-      'assets/*.js': 'coverage'
+      'tmp/result/assets/*.js': 'coverage'
     },
 
     // list of files to exclude
