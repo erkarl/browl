@@ -1,3 +1,3 @@
-var NewRoute = Ember.Route.extend();
+var AdminNewRoute = Ember.Route.extend();
 
-export default NewRoute;
+export default AdminNewRoute;

@@ -24,7 +24,7 @@ var NewAdminController = Ember.Controller.extend({
               title: that.get('title'),
               body: that.get('body')
             };
-            console.log('hash: ' + JSON.stringify(hash));
+            // console.log('hash: ' + JSON.stringify(hash));
             addnew.store.createRecord('post', hash).save().then(function(){
               addnew.reset();
               addnew.transitionToRoute('index');

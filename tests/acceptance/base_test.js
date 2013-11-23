@@ -9,7 +9,7 @@ module('Acceptances - Index', {
   }
 });
 
-test('index renders', function(){
+test('base index renders', function(){
 
   visit('/').then(function(){
     var title = find('h2#title');

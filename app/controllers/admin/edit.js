@@ -6,10 +6,10 @@ var EditAdminController = Ember.ObjectController.extend({
     },
     actions: {
         addNew: function(){
-          console.log('EditAdminController addNew action');
+          // console.log('EditAdminController addNew action');
           var hash = this.getProperties('title', 'body');
           var that = this;
-          debugger;
+          // debugger;
           // TODO: Handle modifying the post.
 
           /*
