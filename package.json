@@ -22,6 +22,7 @@
     "bower": "~1.2.7",
     "grunt": "~0.4.1",
     "grunt-cli": "~0.1.9"
+    "load-grunt-config": "~0.5.0",
   },
   "devDependencies": {
     "express": "~3.4.2",
