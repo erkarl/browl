@@ -1,7 +1,14 @@
 language: node_js
 node_js:
-  - 0.10
+- 0.1
 before_script:
-  - npm install -g grunt-cli
-  - npm install -g bower
-  - bower install
+- npm install -g grunt-cli
+- npm install -g bower
+- bower install
+deploy:
+  provider: heroku
+  api_key:
+    secure: rtM0h7GhSSA47JmL7dFn1RU5MiOjQNlJlebH+WBXnpp9A6zW8Cqce3K7qrrLpzhKPDM8lgF+nsspugWgZyVAc9LCCYbJo3gZXPuHIrgoaqbgNH8hqiL7DEvuuZ64XeQJ6ohoIjS61a+ON0S2Mr9/MyZz9hWSMr2o9VGYGz4sN44=
+  app: browl
+  on:
+    repo: erkarl/browl
