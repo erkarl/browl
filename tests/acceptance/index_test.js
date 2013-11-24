@@ -11,6 +11,8 @@ module('Acceptances - Index', {
 
 test('base index renders', function(){
 
+  expect(1);
+
   visit('/').then(function(){
     var title = find('h2#title');
     equal(title.text(), 'Posts');
