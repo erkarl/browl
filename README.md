@@ -13,6 +13,7 @@ Install the Grunt command-line tool globally (you might have to use sudo dependi
 npm install -g grunt-cli
 ```
 
+...then
 ```console
 npm install
 ```
