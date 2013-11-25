@@ -1,5 +1,5 @@
 # ![Browl](http://i.imgur.com/876ie7H.png) Browl [![Build Status](https://travis-ci.org/erkarl/browl.png?branch=master)](https://travis-ci.org/erkarl/browl)  
-Simple blog built with Ember.js.
+Simple blog built with Ember.js. [Live demo.](http://browl.karlranna.com)
 
 ## Features
 * markdown support
