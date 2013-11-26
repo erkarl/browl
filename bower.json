@@ -7,6 +7,7 @@
     "bootstrap": "*",
     "ember": "~1.2.0",
     "ember-data": "~1.0.0-beta.3",
+    "ember-simple-auth": "https://github.com/simplabs/ember-simple-auth-component.git",
     "ember-resolver": "git://github.com/stefanpenner/ember-jj-abrams-resolver.git#master"
   },
   "resolutions": {
