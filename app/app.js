@@ -13,7 +13,6 @@ var App = Ember.Application.extend({
 App.initializer({
   name: 'Register Components',
   initialize: function(container, application) {
-    registerComponents(container);
     // Options for Auth
     var options = {
         serverTokenEndpoint: "http://browl-api.karlranna.com/oauth2/access_token/"

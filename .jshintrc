@@ -9,6 +9,9 @@
     "DS",
     "Handlebars",
     "markdown",
+    "application",
+    "container",
+    "console",
     "$"
   ],
   "node" : false,
