@@ -13,6 +13,7 @@ module.exports = function(config) {
       'vendor/ember/ember.js',
       'vendor/ember-data/ember-data.js',
       'vendor/markdown.js',
+      'vendor/ember-simple-auth/ember-simple-auth.js',
       'tmp/result/assets/templates.js',
       'tmp/result/assets/app.js',
       'tmp/transpiled/tests/**/*.js',
