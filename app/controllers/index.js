@@ -1,8 +1,10 @@
 var IndexController = Ember.ArrayController.extend({
     actions: {
         deleteEntry: function(post){
-          post.deleteRecord();
-          post.save();
+          Ember.run(function(){
+            post.deleteRecord();
+            post.save();
+          });
         }
     }
 });
