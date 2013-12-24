@@ -12,7 +12,7 @@ var EditAdminController = Ember.ObjectController.extend({
 
           this.get('model').set('title', hash.title);
           this.get('model').set('body', hash.body);
-          debugger;
+          console.log('TODO');
           /*
           this.get('model').then(function(postObject){
             postObject.set('title', this.get('title'));
