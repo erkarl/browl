@@ -10,6 +10,7 @@ var App = Ember.Application.extend({
   Resolver: Resolver['default']
 });
 
+/*
 App.initializer({
   name: 'Register Components',
   initialize: function(container, application) {
@@ -20,6 +21,7 @@ App.initializer({
     Ember.SimpleAuth.setup(container, application, options);
   }
 });
+*/
 
 Ember.RSVP.configure('onerror', function(error) {
   // ensure unhandled promises raise awareness.
