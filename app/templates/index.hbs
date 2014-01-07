@@ -2,7 +2,7 @@
 {{#each model itemController="post"}}
   <li class="list-group-item">
     {{#link-to 'post' id}}{{title}}{{/link-to}}
-    <div class="pull-right">
+    <div style="display: none" class="pull-right">
       {{#link-to 'admin.edit' this.id}}<button class="btn btn-default" >Edit</button>{{/link-to}}
       <button class="btn btn-default" {{action "removePost"}}>Delete</button>
     </div>
